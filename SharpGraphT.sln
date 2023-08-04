@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpGraphT.Core", "SharpGraphT\SharpGraphT.Core.csproj", "{36366C2A-9F43-495E-AD01-BBC25818DE70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{7ED08B7D-5CB4-44D3-87D7-2EE05CBC6900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{7ED08B7D-5CB4-44D3-87D7-2EE05CBC6900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpGraphT.Utils", "SharpGraphT.Utils\SharpGraphT.Utils.csproj", "{1F01B31E-72E0-4A06-9D22-38A882C9C75E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpGraphT.Core", "SharpGraphT.Core\SharpGraphT.Core.csproj", "{1E864F22-03C4-443E-9997-8D9EF726EDE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{36366C2A-9F43-495E-AD01-BBC25818DE70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36366C2A-9F43-495E-AD01-BBC25818DE70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36366C2A-9F43-495E-AD01-BBC25818DE70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36366C2A-9F43-495E-AD01-BBC25818DE70}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7ED08B7D-5CB4-44D3-87D7-2EE05CBC6900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7ED08B7D-5CB4-44D3-87D7-2EE05CBC6900}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ED08B7D-5CB4-44D3-87D7-2EE05CBC6900}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ED08B7D-5CB4-44D3-87D7-2EE05CBC6900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F01B31E-72E0-4A06-9D22-38A882C9C75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F01B31E-72E0-4A06-9D22-38A882C9C75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F01B31E-72E0-4A06-9D22-38A882C9C75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F01B31E-72E0-4A06-9D22-38A882C9C75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E864F22-03C4-443E-9997-8D9EF726EDE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E864F22-03C4-443E-9997-8D9EF726EDE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E864F22-03C4-443E-9997-8D9EF726EDE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E864F22-03C4-443E-9997-8D9EF726EDE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

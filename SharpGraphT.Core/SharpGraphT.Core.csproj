@@ -10,9 +10,11 @@
     <Folder Include="Alg\" />
     <Folder Include="Event\" />
     <Folder Include="Generate\" />
-    <Folder Include="Graph\" />
-    <Folder Include="Util\" />
     <Folder Include="Traverse\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharpGraphT.Utils\SharpGraphT.Utils.csproj" />
   </ItemGroup>
 
 </Project>

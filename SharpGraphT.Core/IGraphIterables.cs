@@ -1,4 +1,7 @@
-﻿namespace SharpGraphT
+﻿using SharpGraphT.Util;
+using System.Collections;
+
+namespace SharpGraphT
 {
     /// <summary>
     /// 将图表示为视图集合，适用于包含非常多顶点或边的图。使用这些方法编写的图算法可以使用不受32位算术限制的图。
