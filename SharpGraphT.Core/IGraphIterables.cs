@@ -9,35 +9,35 @@ namespace SharpGraphT
     /// <typeparam name="TE"></typeparam>
     public interface IGraphIterables<TV, TE> where TE : class, new()
     {
-        IGraph<TV, TE> Graph { get; }
+        IGraph<TV, TE> GetGraph();
         
         IEnumerable<TE> Edges => 
-            new LiveEnumerableWrapper<TE>(() => Graph.EdgeSet());
+            new LiveEnumerableWrapper<TE>(() => GetGraph().EdgeSet());
         
-        long EdgeCount => Graph.EdgeSet().Count;
+        long EdgeCount => GetGraph().EdgeSet().Count;
 
         IEnumerable<TV> Vertices => 
-            new LiveEnumerableWrapper<TV>(() => Graph.VertexSet());
+            new LiveEnumerableWrapper<TV>(() => GetGraph().VertexSet());
 
-        long VertexCount => Graph.VertexSet().Count;
+        long VertexCount => GetGraph().VertexSet().Count;
 
         IEnumerable<TE> EdgesOf(TV vertex) => 
-            new LiveEnumerableWrapper<TE>(() => Graph.EdgesOf(vertex));
+            new LiveEnumerableWrapper<TE>(() => GetGraph().EdgesOf(vertex));
 
-        long DegreeOf(TV vertex) => Graph.DegreeOf(vertex);
+        long DegreeOf(TV vertex) => GetGraph().DegreeOf(vertex);
 
         IEnumerable<TE> IncomingEdgesOf(TV vertex) => 
-            new LiveEnumerableWrapper<TE>(() => Graph.IncomingEdgesOf(vertex));   
+            new LiveEnumerableWrapper<TE>(() => GetGraph().IncomingEdgesOf(vertex));   
 
-        long InDegreeOf(TV vertex) => Graph.InDegreeOf(vertex);
+        long InDegreeOf(TV vertex) => GetGraph().InDegreeOf(vertex);
 
         IEnumerable<TE> OutgoingEdgesOf(TV vertex) => 
-            new LiveEnumerableWrapper<TE>(() => Graph.OutgoingEdgesOf(vertex));
+            new LiveEnumerableWrapper<TE>(() => GetGraph().OutgoingEdgesOf(vertex));
 
-        long OutDegreeOf(TV vertex) => Graph.OutDegreeOf(vertex);
+        long OutDegreeOf(TV vertex) => GetGraph().OutDegreeOf(vertex);
 
         IEnumerable<TE> allEdges(TV sourceVertex, TV targetVertex) => 
-            new LiveEnumerableWrapper<TE>(() => 
-            Graph.GetAllEdges(sourceVertex, targetVertex));
+            new LiveEnumerableWrapper<TE>(() =>
+            GetGraph().GetAllEdges(sourceVertex, targetVertex));
     }
 }
