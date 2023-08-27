@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharpGraphT.Core.Graph.builder
 {
-    public interface GraphTypeBuilderBase
-    {
-        // 中间类型
-    }
-    public class GraphTypeBuilder<TV, TE> : GraphTypeBuilderBase
+    public class GraphTypeBuilder<TV, TE>
         where TE : class, new()
     {
         private bool _undirected;
@@ -72,14 +68,12 @@ namespace SharpGraphT.Core.Graph.builder
             return this;
         }
 
-        public GraphTypeBuilder<TV1, TE> VertexSupplier<TV1>(Func<TV1> vertexSupplier)
-            where TV1 : TV
-        {
-            GraphTypeBuilderBase newBuilder = this;
-            this._vertexSupplier = vertexSupplier;
-            return (GraphTypeBuilder<TV1, TE>)this;
+        public GraphTypeBuilder<TV, TE> VertexSupplier<TV1>(Func<TV> vertexSupplier)
+        {     
+            _vertexSupplier = vertexSupplier;
+            return (GraphTypeBuilder<TV, TE>)this;
         }
-
+         
      
     }
 }
