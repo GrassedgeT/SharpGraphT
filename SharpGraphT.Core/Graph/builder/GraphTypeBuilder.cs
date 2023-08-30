@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -68,12 +69,13 @@ namespace SharpGraphT.Core.Graph.builder
             return this;
         }
 
+        //以下两个方法与jgrapht源码不同，因为C#泛型与java泛型不同， 以及省略了vertexClass和edgeClass这两个方法
         public GraphTypeBuilder<TV, TE> VertexSupplier(Func<TV> vertexSupplier)
-        {     
+        {
             _vertexSupplier = vertexSupplier;
             return (GraphTypeBuilder<TV, TE>)this;
         }
-         
+
         public GraphTypeBuilder<TV, TE> EdgeSupplier(Func<TE> edgeSupplier)
         {
             _edgeSupplier = edgeSupplier;
@@ -82,7 +84,39 @@ namespace SharpGraphT.Core.Graph.builder
 
         public IGraphType buildType()
         {
-            DefaultGraphType
+            var TypeBuilder = new DefaultGraphType.Builder();
+            if (_directed && _undirected)
+            {
+                TypeBuilder = TypeBuilder.Mixed();
+            } else if (_directed)
+            {
+                TypeBuilder = TypeBuilder.Directed();
+            } else if (_undirected)
+            {
+                TypeBuilder = TypeBuilder.Undirected();
+            }
+
+            return TypeBuilder
+                .AllowMultipleEdges(_allowingMultipleEdges)
+                .AllowSelfLoops(_allowingSelfLoops)
+                .Weighted(_weighted)
+                .Build();
+        }
+
+        public GraphBuilder<TV, TE, IGraph<TV, TE>> BuildGraphBuilder() => new GraphBuilder<TV, TE, IGraph<TV, TE>>(BuildGraph());
+
+        public IGraph<TV, TE> BuildGraph()
+        {
+            if(_directed && _undirected)
+            {
+                throw new NotSupportedException("Mixed graph is not supported.");
+            } else if (_directed){
+                if(_allowingMultipleEdges && _allowingSelfLoops)
+                {
+                    _weighted ? return new DirectedWeightedPseudograph<TV, TE>(_vertexSupplier, _edgeSupplier)
+                        : return new DirectedPseudograph<TV, TE>(_vertexSupplier, _edgeSupplier, false);
+                }
+            }
         }
     }
 }
