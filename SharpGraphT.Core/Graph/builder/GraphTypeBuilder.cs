@@ -68,12 +68,21 @@ namespace SharpGraphT.Core.Graph.builder
             return this;
         }
 
-        public GraphTypeBuilder<TV, TE> VertexSupplier<TV1>(Func<TV> vertexSupplier)
+        public GraphTypeBuilder<TV, TE> VertexSupplier(Func<TV> vertexSupplier)
         {     
             _vertexSupplier = vertexSupplier;
             return (GraphTypeBuilder<TV, TE>)this;
         }
          
-     
+        public GraphTypeBuilder<TV, TE> EdgeSupplier(Func<TE> edgeSupplier)
+        {
+            _edgeSupplier = edgeSupplier;
+            return (GraphTypeBuilder<TV, TE>)this;
+        }
+
+        public IGraphType buildType()
+        {
+            DefaultGraphType
+        }
     }
 }
