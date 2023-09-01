@@ -13,12 +13,15 @@ namespace SharpGraphT;
 /// The root interface in the graph hierarchy.
 /// 图层次结构中的根接口。
 /// </summary>
-public interface IGraph<TV, TE> where TE : class, new() {
+public interface IGraph
+{
     /// <summary>
     /// 边的默认权重。
     /// </summary>
     const double DefaultEdgeWeight = 1.0;
 
+}
+public interface IGraph<TV, TE> where TE : class, new() {
     /// <summary>
     /// 返回连接源顶点到目标顶点的所有边的集合，如果这样的顶点存在于这个图中。
     /// 如果任何一个顶点不存在或为null，则返回null。如果两个顶点都存在但没有找到边，则返回一个空集。
