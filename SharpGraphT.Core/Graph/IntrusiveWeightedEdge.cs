@@ -6,5 +6,5 @@ public class IntrusiveWeightedEdge : IntrusiveEdge
 {
     private static readonly long serialVersionUID = 2890534758523920741L;
 
-    protected double weight = IGraph.DefaultEdgeWeight;
+    protected double Weight = IGraph.DefaultEdgeWeight;
 }
