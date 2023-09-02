@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharpGraphT.Core.Graph
 {
-    internal class DirectedPseudograph
+    public class DirectedPseudograph
     {
     }
 }
