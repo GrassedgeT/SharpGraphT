@@ -3,7 +3,7 @@ using SharpGraphT.Core.Graph.specifics;
 
 namespace SharpGraphT.Core.Graph;
 
-public interface IGraphSpecificsStrateg<TV, TE>
+public interface IGraphSpecificsStrategy<TV, TE>
     where TE : class, new()
 {
     Func<IGraphType, IIntrusiveEdgesSpecifics<TV, TE>> GetIntrusiveEdgesSpecifics();
