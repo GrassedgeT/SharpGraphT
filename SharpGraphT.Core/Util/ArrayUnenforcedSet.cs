@@ -1,4 +1,4 @@
-﻿namespace SharpGraphT.Core.Util;
+﻿namespace SharpGraphT.Util;
 
 [Serializable]
 public class ArrayUnenforcedSet<TE> : List<TE>, ISet<TE>
