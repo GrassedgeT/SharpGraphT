@@ -8,7 +8,7 @@ public interface IIntrusiveEdgesSpecifics<TV, TE>
     TV GetEdgeTarget(TE e);
     bool Add(TE e, TV sourceVertex, TV targetVertex);
     bool ContainsEdge(TE e);
-    IEnumerable<TE> GetEdgesSet();
+    IReadOnlySet<TE> GetEdgesSet();
     void Remove(TE e);
     double GetEdgeWeight(TE e);
     void SetEdgeWeight(TE e, double weight);
