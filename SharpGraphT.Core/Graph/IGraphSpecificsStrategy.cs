@@ -1,7 +1,7 @@
 ﻿using SharpGraphT.Core.Graph;
 using SharpGraphT.Core.Graph.specifics;
 
-namespace SharpGraphT.Core;
+namespace SharpGraphT.Core.Graph;
 
 public interface IGraphSpecificsStrateg<TV, TE>
     where TE : class, new()
