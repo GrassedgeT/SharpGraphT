@@ -8,6 +8,6 @@ namespace SharpGraphT.Core.Graph
     public interface IEdgeSetFactory<TV, TE>
         where TE : class, new()
     {
-        IEnumerable<TE> CreateEdgeSet(TV vertex);   
+        ISet<TE> CreateEdgeSet(TV vertex);   
     }
 }
